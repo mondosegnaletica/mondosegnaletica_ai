@@ -1,0 +1,11 @@
+# Impostazioni locali di Claude Code (permessi specifici della macchina)
+.claude/settings.local.json
+
+# File temporanei / sistema
+Thumbs.db
+Desktop.ini
+~$*
+*.tmp
+
+# OneDrive
+.~lock.*
