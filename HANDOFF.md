@@ -37,13 +37,24 @@ Protocollo completo: `.claude/skills/akille/SKILL.md`.
 - Repo GitHub: https://github.com/mondosegnaletica/mondosegnaletica_ai (branch `main`)
 - Shell: PowerShell 7.6.3 (pwsh) — aggiornato, nessun override nei settings
 - `.claude/settings.local.json` è escluso dal repo (permessi locali della macchina)
+- PowerShell e Bash consentiti nei permessi locali (esecuzione autonoma)
+- **graphify** installato via uv (`uv tool install graphifyy`); interprete in `%APPDATA%\uv\tools\graphifyy`
+
+## Knowledge graph (graphify)
+- Grafo del progetto in `graphify-out/` (escluso dal repo, è output generato + vault locale)
+- Vault Obsidian: `graphify-out/obsidian/` (51 note + `graph.canvas`) — apribile in Obsidian
+- Visualizzazione: `graphify-out/graph.html`; report: `graphify-out/GRAPH_REPORT.md`
+- Hub principali: Nazario (15 archi) e Akille (11); 8 community = le aree aziendali
+- Aggiornare con: `graphify` (rebuild) o `/graphify . --update` dopo modifiche
 
 ## Prossimi passi / da fare
+- [ ] **Passaggio a Cowork** per lavorare sulle task aziendali con gli agenti
 - [ ] Collaudare Akille su una task reale (es. una gara o una fattura vera)
 - [ ] Tarare l'integrazione Easyfatt su un export XML/CSV reale (colonne/tracciati effettivi)
 - [ ] Definire eventuali automazioni ricorrenti (skill `schedule`) se richieste
 
 ## Registro modifiche
+- **2026-07-02** — Installato graphify (uv) e generato il knowledge graph + vault Obsidian del progetto.
 - **2026-07-02** — Progetto messo su GitHub (repo `mondosegnaletica_ai`, branch main).
 - **2026-07-02** — Orchestratore rinominato in **Akille**.
 - **2026-07-02** — Creati agenti Gare, Produzione, Segnaletica, Grafica + orchestratore;

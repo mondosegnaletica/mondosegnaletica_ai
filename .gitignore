@@ -1,6 +1,9 @@
 # Impostazioni locali di Claude Code (permessi specifici della macchina)
 .claude/settings.local.json
 
+# Output generato da graphify (grafo + vault Obsidian locale)
+graphify-out/
+
 # File temporanei / sistema
 Thumbs.db
 Desktop.ini
