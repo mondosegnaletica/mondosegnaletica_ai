@@ -47,6 +47,15 @@ Protocollo completo: `.claude/skills/akille/SKILL.md`.
 - Hub principali: Nazario (15 archi) e Akille (11); 8 community = le aree aziendali
 - Aggiornare con: `graphify` (rebuild) o `/graphify . --update` dopo modifiche
 
+## Passare a Cowork
+La procedura guidata `/setup-cowork` (selettori ruolo/plugin/connettori) va eseguita
+**dentro l'app Cowork**, non in Claude Code. Passi:
+1. Apri Cowork nell'app Claude e apri la cartella `MONDOSEGNALETICA_IA`.
+2. Lancia `/setup-cowork` lì e collega email, calendario, documenti.
+3. Gli agenti sono skill di progetto: si richiamano con `/` (`/akille`, `/nazario`, …).
+4. Verifica che l'auto-attivazione di Akille via `CLAUDE.md` funzioni anche in Cowork;
+   in caso contrario invoca `/akille` manualmente (il protocollo è già nella skill).
+
 ## Prossimi passi / da fare
 - [ ] **Passaggio a Cowork** per lavorare sulle task aziendali con gli agenti
 - [ ] Collaudare Akille su una task reale (es. una gara o una fattura vera)
