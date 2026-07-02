@@ -34,3 +34,12 @@ Il dettaglio del protocollo è in `.claude/skills/akille/SKILL.md`.
 - **Nessun invio esterno** (SdI, portali gara, email) senza conferma esplicita.
 - **Lingua**: italiano, tono professionale e sintetico.
 - Token/continuità sessione: opera con **gerry** quando utile.
+
+## Manutenzione documentazione (tenere sempre aggiornato)
+`CLAUDE.md` e `HANDOFF.md` sono i due documenti vivi del progetto. Dopo **ogni modifica
+significativa** (nuovo agente, cambio di struttura, decisione, milestone):
+1. Aggiorna `HANDOFF.md`: data "Ultimo aggiornamento", stato/roadmap, "Prossimi passi"
+   e una riga nel "Registro modifiche".
+2. Aggiorna `CLAUDE.md` se cambiano agenti, instradamento o regole operative.
+3. Proponi/effettua il commit e push sul repo (`git add -A && git commit && git push`).
+Mantieni i due file coerenti tra loro e con `.claude/skills/`.

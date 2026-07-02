@@ -1,39 +1,51 @@
-# HANDOFF
+# HANDOFF — Stato del progetto Mondosegnaletica
 
-## Stato
-- Progetto: Mondosegnaletica
-- Agente amministrativo: Nazario
-- Software: Danea Easyfatt
+> Documento **vivo**: rappresenta sempre lo stato aggiornato del progetto.
+> Va aggiornato ad ogni modifica significativa (vedi regola in `CLAUDE.md`).
 
-## Obiettivo
-Costruire un assistente aziendale completo per:
-- Contabilità
-- Fatturazione
-- Gare
-- Produzione
-- Segnaletica
-- Grafica
-- Automazioni
+**Ultimo aggiornamento:** 2026-07-02
 
-## Roadmap
-1. [x] Nazario — skill in `.claude/skills/nazario/SKILL.md`
-2. [x] Workflow amministrativi — integrato nella skill Nazario (sezione Workflow)
-3. [x] Automazioni — base definita nella skill Nazario (sezione Automazioni)
-4. [x] Integrazione Easyfatt — linee guida XML/CSV nella skill Nazario; da tarare sul file reale
-5. [x] Assistente aziendale completo — agenti Gare, Produzione, Segnaletica, Grafica creati + orchestratore automatico
+## Cos'è
+Assistente aziendale completo per Mondosegnaletica (segnaletica stradale), costruito come
+insieme di agenti Claude Code coordinati da un orchestratore (**Akille**).
+Software gestionale di riferimento: **Danea Easyfatt**.
 
 ## Modello operativo: AKILLE (orchestratore automatico)
-Non si chiamano gli agenti a mano. Dai UNA task e **Akille** la analizza e la smista
-agli agenti competenti, integrando i risultati. Attivazione automatica via `CLAUDE.md`
-di progetto. Protocollo in `.claude/skills/akille/SKILL.md`.
+Non si chiamano gli agenti a mano. Dai UNA task ad Akille: lui la analizza, decide quali
+agenti usare, li coordina (in parallelo o in sequenza) e integra i risultati in un unico
+output. Attivazione automatica in questa cartella via `CLAUDE.md`.
+Protocollo completo: `.claude/skills/akille/SKILL.md`.
 
 ## Agenti (`.claude/skills/`)
-- **nazario** — amministrazione/contabilità/Easyfatt
-- **gare** — bandi e appalti
-- **produzione** — pianificazione produttiva/magazzino
-- **segnaletica** — normativa tecnica segnali
-- **grafica** — layout ed esecutivi di stampa
-- **akille** — orchestratore: smistamento e integrazione
+| Agente | Ruolo |
+|---|---|
+| **akille** | Orchestratore: riceve la task, smista agli agenti, integra l'output |
+| **nazario** | Amministrazione/contabilità: IVA, fatture, DDT, preventivi, scadenze, report, Easyfatt |
+| **gare** | Appalti: bandi, capitolati, offerte, requisiti, MEPA, CIG/CUP |
+| **produzione** | Pianificazione produttiva: ordini di lavoro, materiali, magazzino, commesse |
+| **segnaletica** | Tecnico-normativo: Codice della Strada, rifrangenza, dimensioni, conformità |
+| **grafica** | Progettazione/prestampa: layout, file di stampa, pittogrammi, colori, esecutivi |
+
+## Roadmap
+1. [x] Nazario — agente amministrativo
+2. [x] Workflow amministrativi — integrato in Nazario + `WORKFLOW.md`
+3. [x] Automazioni — base in Nazario (scadenzario, riepilogo IVA, solleciti, report)
+4. [x] Integrazione Easyfatt — linee guida XML/CSV; **da tarare sul file reale**
+5. [x] Assistente completo — agenti Gare, Produzione, Segnaletica, Grafica + Akille
 
 ## Ambiente
-- Shell: PowerShell 7.6.3 (pwsh) — già aggiornato, nessun override nei settings.
+- Repo GitHub: https://github.com/mondosegnaletica/mondosegnaletica_ai (branch `main`)
+- Shell: PowerShell 7.6.3 (pwsh) — aggiornato, nessun override nei settings
+- `.claude/settings.local.json` è escluso dal repo (permessi locali della macchina)
+
+## Prossimi passi / da fare
+- [ ] Collaudare Akille su una task reale (es. una gara o una fattura vera)
+- [ ] Tarare l'integrazione Easyfatt su un export XML/CSV reale (colonne/tracciati effettivi)
+- [ ] Definire eventuali automazioni ricorrenti (skill `schedule`) se richieste
+
+## Registro modifiche
+- **2026-07-02** — Progetto messo su GitHub (repo `mondosegnaletica_ai`, branch main).
+- **2026-07-02** — Orchestratore rinominato in **Akille**.
+- **2026-07-02** — Creati agenti Gare, Produzione, Segnaletica, Grafica + orchestratore;
+  attivazione automatica via `CLAUDE.md`.
+- **2026-07-02** — Creato agente **Nazario** (fasi 1-4 roadmap).
